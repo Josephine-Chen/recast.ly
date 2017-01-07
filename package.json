@@ -6,9 +6,9 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
+    "start": "babel ./src -d ./compiled/src -w",
     "test": "live-server --open=./SpecRunner.html --port=8081",
-    "postinstall": "curl -s https://raw.githubusercontent.com/reactorcore/pomander/master/bin/install | bash",
-    "start": "babel ./src -d ./compiled/src -w"
+    "postinstall": "curl -s https://raw.githubusercontent.com/reactorcore/pomander/master/bin/install | bash"
   },
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.2",
