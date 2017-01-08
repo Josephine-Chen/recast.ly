@@ -3,25 +3,24 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      vids: [],
+      vidoes: [],
       currentVid: null
     };
   }
 
   componentDidMount() {
-    this.getYouTubeVideos('react tutorials');
+    this.getYouTubeVideos('ghibli piano');
   }
 
   getYouTubeVideos(searchQuery) {
     var options = {
       query: searchQuery,
-      max: 10,
       key: this.props.API_KEY
     };
 
     this.props.searchYouTube(options, (videos) =>
       this.setState({
-        vids: videos,
+        vidoes: videos,
         currentVid: videos[0]
       })
     );
@@ -47,12 +46,15 @@ class App extends React.Component {
         <div className="col-md-5">
           <VideoList
             onEntryTitleClicked={this.onEntryTitleClicked.bind(this)}
-            videos={this.state.vids}/>
+            videos={this.state.vidoes}/>
         </div>
       </div>
     );
   }
 }
+
+
+
 
 // In the ES6 spec, files are "modules" and do not share a top-level scope
 // `var` declarations will only exist globally where explicitly defined

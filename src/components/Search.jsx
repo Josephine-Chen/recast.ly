@@ -2,7 +2,7 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-    value: ''
+      value: ''
     };
   }
 
@@ -20,7 +20,12 @@ class Search extends React.Component {
         value={this.state.value}
         onChange={this.handleInputChange.bind(this)}
       />
-      <button className="btn hidden-sm-down">
+      <button className="btn hidden-sm-down"
+        onClick={
+          function() {
+            console.log("I am not a real button because reasons? :c");
+          }.bind(this)
+        }">
         <span className="glyphicon glyphicon-search"></span>
       </button>
     </div>
