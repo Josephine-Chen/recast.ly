@@ -1,7 +1,10 @@
-var VideoList = (props) => (
+var VideoList = ({videos, onEntryTitleClicked}) => (
   <div className="video-list media">
-    {props.videos.map( video =>
-      <VideoListEntry onEntryTitleClicked={props.onEntryTitleClicked} video={video} />
+    {videos.map( (video) =>
+      <VideoListEntry
+      onEntryTitleClicked={onEntryTitleClicked}
+      video={video}
+      key={video.etag} />
     )}
   </div>
 );

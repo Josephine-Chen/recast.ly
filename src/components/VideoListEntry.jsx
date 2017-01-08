@@ -1,18 +1,17 @@
-var VideoListEntry = (props) => {
-  var onTitleClickHandler = function() {
-    props.onEntryTitleClicked(props.video);
-  };
-
+var VideoListEntry = ({video, onEntryTitleClicked}) => {
   return (
-    <div className="video-list-entry">
-      <div className="media-left media-middle">
-        <img className="media-object" src={props.video.snippet.thumbnails.default.url} alt="" />
-      </div>
-      <div className="media-body">
-        <div onClick={onTitleClickHandler} className="video-list-entry-title">{props.video.snippet.title}</div>
-        <div className="video-list-entry-detail">{props.video.snippet.description}</div>
-      </div>
+  <div className="video-list-entry">
+    <div className="media-left media-middle">
+      <img className="media-object" src={video.snippet.thumbnails.default.url} alt="" />
     </div>
+    <div className="media-body">
+      <div onClick={() => onEntryTitleClicked(video)}
+        className="video-list-entry-title">
+        {video.snippet.title}
+      </div>
+      <div className="video-list-entry-detail">{video.snippet.description}</div>
+    </div>
+  </div>
   );
 };
 
